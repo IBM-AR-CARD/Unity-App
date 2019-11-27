@@ -1,0 +1,421 @@
+fileFormatVersion: 2
+guid: ce0b74af835894538a8ae08aa7af34c0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 21_+Eyes_1_0_0
+    100002: 21_+Hair_1_0_0
+    100004: 21_+HatBack_1_0_0
+    100006: 21_-Hat_1_0_0
+    100008: 21_eyeunder_1_0_0
+    100010: 21_sash_1_0_0
+    100012: 21_shirt_1_0_0
+    100014: 21_shorts2_1_0_0
+    100016: 21_shorts_1_0_0
+    100018: 21_skin_1_0_0
+    100020: 21_teeth_1_0_0
+    100022: arm left elbow
+    100024: arm left finger 1a
+    100026: arm left finger 1b
+    100028: arm left finger 1c
+    100030: arm left finger 2a
+    100032: arm left finger 2b
+    100034: arm left finger 2c
+    100036: arm left finger 3a
+    100038: arm left finger 3b
+    100040: arm left finger 3c
+    100042: arm left finger 4a
+    100044: arm left finger 4b
+    100046: arm left finger 4c
+    100048: arm left finger 5a
+    100050: arm left finger 5b
+    100052: arm left finger 5c
+    100054: arm left shoulder 1
+    100056: arm left shoulder 2
+    100058: arm left wrist
+    100060: arm left wrist adj
+    100062: arm right elbow
+    100064: arm right finger 1a
+    100066: arm right finger 1b
+    100068: arm right finger 1c
+    100070: arm right finger 2a
+    100072: arm right finger 2b
+    100074: arm right finger 2c
+    100076: arm right finger 3a
+    100078: arm right finger 3b
+    100080: arm right finger 3c
+    100082: arm right finger 4a
+    100084: arm right finger 4b
+    100086: arm right finger 4c
+    100088: arm right finger 5a
+    100090: arm right finger 5b
+    100092: arm right finger 5c
+    100094: arm right shoulder 1
+    100096: arm right shoulder 2
+    100098: arm right wrist
+    100100: arm right wrist adj
+    100102: Armature
+    100104: hair back
+    100106: hair front left
+    100108: hair front middle
+    100110: hair front right
+    100112: hat
+    100114: hat back
+    100116: hat root
+    100118: head eyeball left
+    100120: head eyeball right
+    100122: head eyebrow center
+    100124: head eyebrow left 1
+    100126: head eyebrow left 2
+    100128: head eyebrow left 3
+    100130: head eyebrow right 1
+    100132: head eyebrow right 2
+    100134: head eyebrow right 3
+    100136: head eyelid left lower 1
+    100138: head eyelid left lower 2
+    100140: head eyelid left lower 3
+    100142: head eyelid left lower 4
+    100144: head eyelid left upper 1
+    100146: head eyelid left upper 2
+    100148: head eyelid left upper 3
+    100150: head eyelid right lower 1
+    100152: head eyelid right lower 2
+    100154: head eyelid right lower 3
+    100156: head eyelid right lower 4
+    100158: head eyelid right upper 1
+    100160: head eyelid right upper 2
+    100162: head eyelid right upper 3
+    100164: head jaw
+    100166: head lip corner left
+    100168: head lip corner right
+    100170: head lip lower left 1
+    100172: head lip lower left 2
+    100174: head lip lower middle
+    100176: head lip lower right 1
+    100178: head lip lower right 2
+    100180: head lip upper left 1
+    100182: head lip upper left 2
+    100184: head lip upper middle
+    100186: head lip upper right 1
+    100188: head lip upper right 2
+    100190: head neck lower
+    100192: head neck upper
+    100194: leg left ankle
+    100196: leg left knee
+    100198: leg left shorts adj
+    100200: leg left thigh
+    100202: leg left toes
+    100204: leg right ankle
+    100206: leg right knee
+    100208: leg right shorts adj
+    100210: leg right thigh
+    100212: leg right toes
+    100214: //RootNode
+    100216: Luffy
+    100218: root ground
+    100220: root hips
+    100222: sash a
+    100224: sash b
+    100226: sash c
+    100228: shirt back a
+    100230: shirt back b
+    100232: shirt front left
+    100234: shirt front right
+    100236: shirt left
+    100238: shirt right
+    100240: Sombrero
+    100242: spine lower
+    100244: spine upper
+    100246: unused100
+    100248: unused101
+    100250: unused102
+    100252: unused103
+    100254: unused104
+    100256: unused105
+    100258: unused15
+    100260: unused16
+    100262: unused18
+    100264: unused19
+    100266: unused22
+    100268: unused64
+    100270: unused65
+    100272: unused67
+    100274: unused68
+    100276: unused94
+    100278: unusedarm left wrist 2
+    100280: unusedarm right wrist 2
+    100282: unusedhead cheek left 1
+    100284: unusedhead cheek left 2
+    100286: unusedhead cheek right 1
+    100288: unusedhead cheek right 2
+    100290: unusedhead chin
+    100292: unusedhead chin left
+    100294: unusedhead chin right
+    100296: unusedhead forehead
+    100298: unusedhead left
+    100300: unusedhead nose
+    100302: unusedhead right
+    400000: 21_+Eyes_1_0_0
+    400002: 21_+Hair_1_0_0
+    400004: 21_+HatBack_1_0_0
+    400006: 21_-Hat_1_0_0
+    400008: 21_eyeunder_1_0_0
+    400010: 21_sash_1_0_0
+    400012: 21_shirt_1_0_0
+    400014: 21_shorts2_1_0_0
+    400016: 21_shorts_1_0_0
+    400018: 21_skin_1_0_0
+    400020: 21_teeth_1_0_0
+    400022: arm left elbow
+    400024: arm left finger 1a
+    400026: arm left finger 1b
+    400028: arm left finger 1c
+    400030: arm left finger 2a
+    400032: arm left finger 2b
+    400034: arm left finger 2c
+    400036: arm left finger 3a
+    400038: arm left finger 3b
+    400040: arm left finger 3c
+    400042: arm left finger 4a
+    400044: arm left finger 4b
+    400046: arm left finger 4c
+    400048: arm left finger 5a
+    400050: arm left finger 5b
+    400052: arm left finger 5c
+    400054: arm left shoulder 1
+    400056: arm left shoulder 2
+    400058: arm left wrist
+    400060: arm left wrist adj
+    400062: arm right elbow
+    400064: arm right finger 1a
+    400066: arm right finger 1b
+    400068: arm right finger 1c
+    400070: arm right finger 2a
+    400072: arm right finger 2b
+    400074: arm right finger 2c
+    400076: arm right finger 3a
+    400078: arm right finger 3b
+    400080: arm right finger 3c
+    400082: arm right finger 4a
+    400084: arm right finger 4b
+    400086: arm right finger 4c
+    400088: arm right finger 5a
+    400090: arm right finger 5b
+    400092: arm right finger 5c
+    400094: arm right shoulder 1
+    400096: arm right shoulder 2
+    400098: arm right wrist
+    400100: arm right wrist adj
+    400102: Armature
+    400104: hair back
+    400106: hair front left
+    400108: hair front middle
+    400110: hair front right
+    400112: hat
+    400114: hat back
+    400116: hat root
+    400118: head eyeball left
+    400120: head eyeball right
+    400122: head eyebrow center
+    400124: head eyebrow left 1
+    400126: head eyebrow left 2
+    400128: head eyebrow left 3
+    400130: head eyebrow right 1
+    400132: head eyebrow right 2
+    400134: head eyebrow right 3
+    400136: head eyelid left lower 1
+    400138: head eyelid left lower 2
+    400140: head eyelid left lower 3
+    400142: head eyelid left lower 4
+    400144: head eyelid left upper 1
+    400146: head eyelid left upper 2
+    400148: head eyelid left upper 3
+    400150: head eyelid right lower 1
+    400152: head eyelid right lower 2
+    400154: head eyelid right lower 3
+    400156: head eyelid right lower 4
+    400158: head eyelid right upper 1
+    400160: head eyelid right upper 2
+    400162: head eyelid right upper 3
+    400164: head jaw
+    400166: head lip corner left
+    400168: head lip corner right
+    400170: head lip lower left 1
+    400172: head lip lower left 2
+    400174: head lip lower middle
+    400176: head lip lower right 1
+    400178: head lip lower right 2
+    400180: head lip upper left 1
+    400182: head lip upper left 2
+    400184: head lip upper middle
+    400186: head lip upper right 1
+    400188: head lip upper right 2
+    400190: head neck lower
+    400192: head neck upper
+    400194: leg left ankle
+    400196: leg left knee
+    400198: leg left shorts adj
+    400200: leg left thigh
+    400202: leg left toes
+    400204: leg right ankle
+    400206: leg right knee
+    400208: leg right shorts adj
+    400210: leg right thigh
+    400212: leg right toes
+    400214: Luffy
+    400216: //RootNode
+    400218: root ground
+    400220: root hips
+    400222: sash a
+    400224: sash b
+    400226: sash c
+    400228: shirt back a
+    400230: shirt back b
+    400232: shirt front left
+    400234: shirt front right
+    400236: shirt left
+    400238: shirt right
+    400240: Sombrero
+    400242: spine lower
+    400244: spine upper
+    400246: unused100
+    400248: unused101
+    400250: unused102
+    400252: unused103
+    400254: unused104
+    400256: unused105
+    400258: unused15
+    400260: unused16
+    400262: unused18
+    400264: unused19
+    400266: unused22
+    400268: unused64
+    400270: unused65
+    400272: unused67
+    400274: unused68
+    400276: unused94
+    400278: unusedarm left wrist 2
+    400280: unusedarm right wrist 2
+    400282: unusedhead cheek left 1
+    400284: unusedhead cheek left 2
+    400286: unusedhead cheek right 1
+    400288: unusedhead cheek right 2
+    400290: unusedhead chin
+    400292: unusedhead chin left
+    400294: unusedhead chin right
+    400296: unusedhead forehead
+    400298: unusedhead left
+    400300: unusedhead nose
+    400302: unusedhead right
+    2100000: LuffyD
+    2100002: lambert4
+    2100004: lambert3
+    4300000: 21_teeth_1_0_0
+    4300002: 21_skin_1_0_0
+    4300004: 21_shorts_1_0_0
+    4300006: 21_shorts2_1_0_0
+    4300008: 21_shirt_1_0_0
+    4300010: 21_sash_1_0_0
+    4300012: 21_eyeunder_1_0_0
+    4300014: 21_+HatBack_1_0_0
+    4300016: 21_+Hair_1_0_0
+    4300018: 21_+Eyes_1_0_0
+    4300020: 21_-Hat_1_0_0
+    9500000: //RootNode
+    13700000: 21_+Eyes_1_0_0
+    13700002: 21_+Hair_1_0_0
+    13700004: 21_+HatBack_1_0_0
+    13700006: 21_-Hat_1_0_0
+    13700008: 21_eyeunder_1_0_0
+    13700010: 21_sash_1_0_0
+    13700012: 21_shirt_1_0_0
+    13700014: 21_shorts2_1_0_0
+    13700016: 21_shorts_1_0_0
+    13700018: 21_skin_1_0_0
+    13700020: 21_teeth_1_0_0
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
