@@ -28,6 +28,8 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         for (int i = 0; i < Input.touchCount; ++i)
         {
             Debug.Log("ok");
+            UnityMessageManager.Instance.SendMessageToFlutter("touched init!");
+
             if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
             {
                 var hit = new RaycastHit();
