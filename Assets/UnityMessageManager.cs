@@ -88,6 +88,7 @@ public class UnityMessageManager : MonoBehaviour
 
     static UnityMessageManager()
     {
+        Debug.Log("UnityMessageManager created");
         GameObject go = new GameObject("UnityMessageManager");
         DontDestroyOnLoad(go);
         Instance = go.AddComponent<UnityMessageManager>();
@@ -99,6 +100,7 @@ public class UnityMessageManager : MonoBehaviour
 
     public void SendMessageToFlutter(string message)
     {
+        Debug.Log("text message sent");
         if (Application.platform == RuntimePlatform.Android)
         {
             using (AndroidJavaClass jc = new AndroidJavaClass("com.rexraphael.flutterunitywidget.UnityUtils"))
@@ -116,6 +118,7 @@ public class UnityMessageManager : MonoBehaviour
 
     public void SendMessageToFlutter(UnityMessage message)
     {
+        Debug.Log("unity message sent");
         int id = generateId();
         if (message.callBack != null)
         {
