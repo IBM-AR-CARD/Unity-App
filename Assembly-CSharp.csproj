@@ -306,6 +306,9 @@
  <Reference Include="SALSA">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/Crazy Minnow Studio/SALSA with RandomEyes/Plugins/SALSA.dll</HintPath>
  </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
@@ -314,9 +317,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2018.4.10f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

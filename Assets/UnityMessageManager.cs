@@ -145,6 +145,8 @@ public class UnityMessageManager : MonoBehaviour
 
     void onFlutterMessage(string message)
     {
+        Debug.Log("unity message received");
+        Debug.Log(message);
         if (message.StartsWith(MessagePrefix))
         {
             message = message.Replace(MessagePrefix, "");

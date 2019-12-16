@@ -301,6 +301,9 @@
  <Reference Include="SALSAEditor">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/Crazy Minnow Studio/SALSA with RandomEyes/Editor/SALSAEditor.dll</HintPath>
  </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -315,9 +318,6 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/henry/Documents/UCL-CS-Year-2/COMP0016 System Engineering/Unity/AR Card Unity Application/unity/AR Card/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2018.4.10f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
