@@ -220,8 +220,8 @@ MonoBehaviour:
   mDataSetPath: Vuforia/VuforiaMars_Images.xml
   mAspectRatio: 1.7272727
   mImageTargetType: 0
-  mWidth: 0.06985
-  mHeight: 0.12065
+  mWidth: 0.57894737
+  mHeight: 1
 --- !u!4 &93856713
 Transform:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 93856707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12065, y: 0.12065, z: 0.12065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1778343148}
   - {fileID: 933207693}
@@ -855,13 +855,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633677017}
-  m_LocalRotation: {x: 0.28133735, y: -0, z: -0, w: 0.959609}
-  m_LocalPosition: {x: -0.007, y: 0.104, z: -0.124}
+  m_LocalRotation: {x: 0.09967703, y: 0.034697212, z: 0.0035429094, w: 0.9944084}
+  m_LocalPosition: {x: -0.101, y: 0.836, z: -1.453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 32.68, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.42, y: 4.078, z: 0.81600004}
 --- !u!1 &1778343147
 GameObject:
   m_ObjectHideFlags: 0
