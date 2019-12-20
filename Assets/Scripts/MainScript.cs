@@ -45,6 +45,14 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
                 }
             }
         }
+
+        if (Input.GetKeyDown("i")){
+            changeAnimator("idle");
+        }else if (Input.GetKeyDown("t")){
+            changeAnimator("talking");
+        }else if (Input.GetKeyDown("d")){
+            changeAnimator("dancing");
+        }
     }
 
     // This method is called from Flutter
@@ -54,8 +62,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         mytext.text=message;
     }
 
+    // This method is called from Flutter
     public void changeAnimator(String animatorPath){
         Animator animator = player.gameObject.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
+        Debug.Log("animator changed to " + animatorPath);
     }
 }
