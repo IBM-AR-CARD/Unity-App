@@ -10,6 +10,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
+    private String currentAnimation = "idle";
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,8 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
             changeAnimator("talking");
         }else if (Input.GetKeyDown("d")){
             changeAnimator("dancing");
+        }else if (Input.GetKeyDown("c")){
+            changeCharacter("Luffy/Luffy");
         }
     }
 
@@ -64,11 +67,22 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 
     // This method is called from Flutter
     public void changeAnimator(String animatorPath){
-        Animator animator = player.gameObject.GetComponent<Animator>();
+        GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
+        Animator animator = currentPlayer.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
         //return to card center
         player.transform.localRotation = Quaternion.identity;
         player.transform.localPosition = Vector3.zero;
+        currentAnimation = animatorPath;
         Debug.Log("animator changed to " + animatorPath);
+    }
+
+    public void changeCharacter(String characterPath){
+        GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
+        GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath)) as GameObject;
+        GameObject.Destroy(currentPlayer);
+        newChild.transform.parent = player.transform;
+		newChild.transform.localPosition = Vector3.zero;
+        Debug.Log("character changed to " + characterPath);
     }
 }
