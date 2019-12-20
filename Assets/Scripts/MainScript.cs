@@ -10,7 +10,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
-    private String currentAnimation = "idle";
+    public String currentAnimation = "idle";
     // Start is called before the first frame update
     void Start()
     {
@@ -68,11 +68,15 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     // This method is called from Flutter
     public void changeAnimator(String animatorPath){
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
+        changeAnimatorWithObject(currentPlayer, animatorPath);
+    }
+
+    public void changeAnimatorWithObject(GameObject currentPlayer, String animatorPath){
         Animator animator = currentPlayer.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
         //return to card center
-        player.transform.localRotation = Quaternion.identity;
-        player.transform.localPosition = Vector3.zero;
+        currentPlayer.transform.localRotation = Quaternion.Euler(0, -180, 0);
+        currentPlayer.transform.localPosition = Vector3.zero;
         currentAnimation = animatorPath;
         Debug.Log("animator changed to " + animatorPath);
     }
@@ -81,8 +85,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath)) as GameObject;
         GameObject.Destroy(currentPlayer);
-        newChild.transform.parent = player.transform;
-		newChild.transform.localPosition = Vector3.zero;
+        newChild.transform.SetParent(player.transform,false);
+
+        // newChild.GetComponent().enabled = false;
         Debug.Log("character changed to " + characterPath);
+        changeAnimatorWithObject(newChild, currentAnimation);
     }
 }
