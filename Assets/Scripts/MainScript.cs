@@ -9,6 +9,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 {
     [SerializeField]
     public TextMesh mytext = null;
+    public GameObject player = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,8 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 
         UnityMessageManager.Instance.SendMessageToFlutter("started");
 
-        
-        
+        changeAnimator("idle");
+
         
     }
 
@@ -51,5 +52,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     {
         Debug.Log(message);
         mytext.text=message;
+    }
+
+    public void changeAnimator(String animatorPath){
+        Animator animator = player.gameObject.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
     }
 }
