@@ -17,7 +17,7 @@ public class RandomIdleAnimation : StateMachineBehaviour
     {
        if(aniTimer<=0){
            randomAnimation(animator);
-           aniTimer = Random.Range(20,50); //random between 20 - 50 seconds
+           aniTimer = Random.Range(20,30); //random between 20 - 40 seconds
        }else{
            aniTimer -= Time.deltaTime;
        }
