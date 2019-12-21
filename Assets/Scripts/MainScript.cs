@@ -56,8 +56,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }else if (Input.GetKeyDown("d")){
             changeAnimator("dancing");
         }else if (Input.GetKeyDown("c")){
-            String character = characterList[new System.Random().Next(0,characterList.Length) ];
-            changeCharacter(character);
+            randomModel();
         }
     }
 
@@ -94,6 +93,11 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
+    }
+
+    public void randomModel(){
+        String character = characterList[ new System.Random().Next(0,characterList.Length) ];
+        changeCharacter(character);
     }
 
 
