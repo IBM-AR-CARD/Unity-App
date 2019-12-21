@@ -10,7 +10,9 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
-    public String currentAnimation = "idle";
+    private String currentAnimation = "idle";
+    private String[] characterList = new string[]{ "TestMale", "Luffy" };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,8 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }else if (Input.GetKeyDown("d")){
             changeAnimator("dancing");
         }else if (Input.GetKeyDown("c")){
-            changeCharacter("Luffy/Luffy");
+            String character = characterList[new System.Random().Next(0,characterList.Length) ];
+            changeCharacter(character);
         }
     }
 
@@ -83,7 +86,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 
     public void changeCharacter(String characterPath){
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
-        GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath)) as GameObject;
+        GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath + "/" + characterPath)) as GameObject;
         GameObject.Destroy(currentPlayer);
         newChild.transform.SetParent(player.transform,false);
         if(!TrackingScript.isTracked){
