@@ -11,7 +11,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public TextMesh mytext = null;
     public GameObject player = null;
     private String currentAnimation = "idle";
-    private String[] characterList = new string[]{ "TestMale", "Luffy" };
+    private String[] characterList = new string[]{ "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged" };
 
     // Start is called before the first frame update
     void Start()
