@@ -4,13 +4,15 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Vuforia;
 
-public class MainScript : MonoBehaviour, IEventSystemHandler
+public class MainScript : MonoBehaviour, IEventSystemHandler, ITrackableEventHandler
 {
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
     public String currentAnimation = "idle";
+    private TrackableBehaviour mTrackableBehaviour;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,11 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         UnityMessageManager.Instance.SendMessageToFlutter("started");
 
         changeAnimator("idle");
+
+        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+        if (mTrackableBehaviour){
+            mTrackableBehaviour.RegisterTrackableEventHandler(this);
+        }
 
         
     }
@@ -86,9 +93,45 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath)) as GameObject;
         GameObject.Destroy(currentPlayer);
         newChild.transform.SetParent(player.transform,false);
-
+        hideObject(newChild);
         // newChild.GetComponent().enabled = false;
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
+    }
+
+
+    //ref: https://developer.vuforia.com/forum/unity-extension-technical-discussion/creating-child-object-image-targets-runtime
+    private void hideObject(GameObject go)
+    {
+        Renderer[] rendererComponents = go.GetComponentsInChildren<Renderer>();
+        Collider[] colliderComponents = go.GetComponentsInChildren<Collider>();
+
+        // Disable rendering:
+        foreach (Renderer component in rendererComponents)
+        {
+            component.enabled = false;
+        }
+
+        // Disable colliders:
+        foreach (Collider component in colliderComponents)
+        {
+            component.enabled = false;
+        }
+    }
+
+      public void OnTrackableStateChanged(  TrackableBehaviour.Status previousStatus,
+                                            TrackableBehaviour.Status newStatus){
+        if (newStatus == TrackableBehaviour.Status.DETECTED ||
+            newStatus == TrackableBehaviour.Status.TRACKED ||
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+        {
+            // Play  when target is found
+            Debug.Log("TRACKED!!");
+        }
+        else
+        {
+            // Stop  when target is lost
+            Debug.Log("NOT_TRACKED");
+        }
     }
 }
