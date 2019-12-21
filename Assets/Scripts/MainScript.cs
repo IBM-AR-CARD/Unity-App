@@ -4,15 +4,13 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Vuforia;
 
-public class MainScript : MonoBehaviour, IEventSystemHandler, ITrackableEventHandler
+public class MainScript : MonoBehaviour, IEventSystemHandler
 {
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
     public String currentAnimation = "idle";
-    private TrackableBehaviour mTrackableBehaviour;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +20,6 @@ public class MainScript : MonoBehaviour, IEventSystemHandler, ITrackableEventHan
         UnityMessageManager.Instance.SendMessageToFlutter("started");
 
         changeAnimator("idle");
-
-        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
-        if (mTrackableBehaviour){
-            mTrackableBehaviour.RegisterTrackableEventHandler(this);
-        }
 
         
     }
@@ -116,22 +109,6 @@ public class MainScript : MonoBehaviour, IEventSystemHandler, ITrackableEventHan
         foreach (Collider component in colliderComponents)
         {
             component.enabled = false;
-        }
-    }
-
-      public void OnTrackableStateChanged(  TrackableBehaviour.Status previousStatus,
-                                            TrackableBehaviour.Status newStatus){
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
-        {
-            // Play  when target is found
-            Debug.Log("TRACKED!!");
-        }
-        else
-        {
-            // Stop  when target is lost
-            Debug.Log("NOT_TRACKED");
         }
     }
 }
