@@ -86,8 +86,9 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath)) as GameObject;
         GameObject.Destroy(currentPlayer);
         newChild.transform.SetParent(player.transform,false);
-        hideObject(newChild);
-        // newChild.GetComponent().enabled = false;
+        if(!TrackingScript.isTracked){
+            hideObject(newChild);
+        }
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
     }

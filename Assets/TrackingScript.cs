@@ -6,6 +6,7 @@ using Vuforia;
 public class TrackingScript : MonoBehaviour, ITrackableEventHandler
 {
     private TrackableBehaviour mTrackableBehaviour;
+    public static bool isTracked = false;
 
     void Start()
     {
@@ -24,11 +25,13 @@ public class TrackingScript : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-			Debug.Log("TRACKED");
+			Debug.Log("TRACKED!!");
+            isTracked = true;
         }
         else
         {
-			Debug.Log("LOST");
+			Debug.Log("LOST!!");
+            isTracked = false;
         }
     }	
 }
