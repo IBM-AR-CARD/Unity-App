@@ -10,13 +10,13 @@ public class TrackingScript : MonoBehaviour, ITrackableEventHandler
 
     void Start()
     {
-		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
-			mTrackableBehaviour.RegisterTrackableEventHandler(this);
+            mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
     }
-    
+
     public void OnTrackableStateChanged(
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
@@ -25,13 +25,15 @@ public class TrackingScript : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-			Debug.Log("TRACKED!!");
+            Debug.Log("TRACKED!!");
             isTracked = true;
+            UnityMessageManager.Instance.SendMessageToFlutter("#tracked#");
         }
         else
         {
-			Debug.Log("LOST!!");
+            Debug.Log("LOST!!");
             isTracked = false;
+            UnityMessageManager.Instance.SendMessageToFlutter("#lost#");
         }
-    }	
+    }
 }

@@ -11,19 +11,19 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public TextMesh mytext = null;
     public GameObject player = null;
     private String currentAnimation = "idle";
-    private String[] characterList = new string[]{ "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale"};
+    private String[] characterList = new string[] { "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("started");
-        mytext.text="hello world!";
+        mytext.text = "hello world!";
 
-        UnityMessageManager.Instance.SendMessageToFlutter("started");
+        UnityMessageManager.Instance.SendMessageToFlutter("#started#");
 
         changeAnimator("idle");
 
-        
+
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         for (int i = 0; i < Input.touchCount; ++i)
         {
             Debug.Log("ok");
-            UnityMessageManager.Instance.SendMessageToFlutter("touched init!");
+            UnityMessageManager.Instance.SendMessageToFlutter("#touched#");
 
             if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
             {
@@ -44,18 +44,25 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
                 {
                     Debug.Log("touched");
                     // This method is used to send data to Flutter
-                    UnityMessageManager.Instance.SendMessageToFlutter("The cube feels touched.");
+                    UnityMessageManager.Instance.SendMessageToFlutter("Raycast Touched");
                 }
             }
         }
 
-        if (Input.GetKeyDown("i")){
+        if (Input.GetKeyDown("i"))
+        {
             changeAnimator("idle");
-        }else if (Input.GetKeyDown("t")){
+        }
+        else if (Input.GetKeyDown("t"))
+        {
             changeAnimator("talking");
-        }else if (Input.GetKeyDown("d")){
+        }
+        else if (Input.GetKeyDown("d"))
+        {
             changeAnimator("dancing");
-        }else if (Input.GetKeyDown("c")){
+        }
+        else if (Input.GetKeyDown("c"))
+        {
             randomModel();
         }
     }
@@ -64,16 +71,18 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public void changeText(String message)
     {
         Debug.Log(message);
-        mytext.text=message;
+        mytext.text = message;
     }
 
     // This method is called from Flutter
-    public void changeAnimator(String animatorPath){
+    public void changeAnimator(String animatorPath)
+    {
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
         changeAnimatorWithObject(currentPlayer, animatorPath);
     }
 
-    public void changeAnimatorWithObject(GameObject currentPlayer, String animatorPath){
+    public void changeAnimatorWithObject(GameObject currentPlayer, String animatorPath)
+    {
         Animator animator = currentPlayer.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
         //return to card center
@@ -83,20 +92,23 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         Debug.Log("animator changed to " + animatorPath);
     }
 
-    public void changeCharacter(String characterPath){
+    public void changeCharacter(String characterPath)
+    {
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath + "/" + characterPath)) as GameObject;
         GameObject.Destroy(currentPlayer);
-        newChild.transform.SetParent(player.transform,false);
-        if(!TrackingScript.isTracked){
+        newChild.transform.SetParent(player.transform, false);
+        if (!TrackingScript.isTracked)
+        {
             hideObject(newChild);
         }
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
     }
 
-    public void randomModel(){
-        String character = characterList[ new System.Random().Next(0,characterList.Length) ];
+    public void randomModel()
+    {
+        String character = characterList[new System.Random().Next(0, characterList.Length)];
         changeCharacter(character);
     }
 
