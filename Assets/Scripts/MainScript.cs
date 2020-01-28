@@ -94,9 +94,12 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 
     public void changeCharacter(String characterPath)
     {
-        GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
+        Transform currentPlayer = player.gameObject.transform;
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath + "/" + characterPath)) as GameObject;
-        GameObject.Destroy(currentPlayer);
+        foreach (Transform child in currentPlayer) {
+            GameObject.Destroy(child.gameObject);
+        }
+        
         newChild.transform.SetParent(player.transform, false);
         if (!TrackingScript.isTracked)
         {
