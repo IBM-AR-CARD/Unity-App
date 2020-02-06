@@ -91,6 +91,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         currentPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         currentPlayer.transform.localPosition = Vector3.zero;
         currentAnimation = animatorPath;
+        
+        FLookAnimator la = currentPlayer.GetComponent(typeof(FLookAnimator)) as FLookAnimator;
+        la.ObjectToFollow = animatorPath=="dancing" ? null : followCamera.transform; // if not dancing, head start following camera
+        
         Debug.Log("animator changed to " + animatorPath);
     }
 
@@ -110,9 +114,6 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
 
-        // FLookAnimator la = player.gameObject.AddComponent<FLookAnimator>() as FLookAnimator;
-        // la.ObjectToFollow = followCamera.transform;
-        // FLookAnimator_Editor.FindHeadBone(la);
     }
 
     public void randomModel()
