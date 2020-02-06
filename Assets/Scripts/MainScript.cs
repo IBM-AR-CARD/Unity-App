@@ -4,12 +4,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using FIMSpace.FLook;
 
 public class MainScript : MonoBehaviour, IEventSystemHandler
 {
     [SerializeField]
     public TextMesh mytext = null;
     public GameObject player = null;
+    public GameObject followCamera = null;
     private String currentAnimation = "idle";
     private String[] characterList = new string[] { "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
 
@@ -107,6 +109,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
         Debug.Log("character changed to " + characterPath);
         changeAnimatorWithObject(newChild, currentAnimation);
+
+        // FLookAnimator la = player.gameObject.AddComponent<FLookAnimator>() as FLookAnimator;
+        // la.ObjectToFollow = followCamera.transform;
+        // FLookAnimator_Editor.FindHeadBone(la);
     }
 
     public void randomModel()
