@@ -86,7 +86,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         Animator animator = currentPlayer.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load(animatorPath) as RuntimeAnimatorController;
         //return to card center
-        currentPlayer.transform.localRotation = Quaternion.Euler(0, -180, 0);
+        currentPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         currentPlayer.transform.localPosition = Vector3.zero;
         currentAnimation = animatorPath;
         Debug.Log("animator changed to " + animatorPath);
