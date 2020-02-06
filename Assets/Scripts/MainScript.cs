@@ -13,7 +13,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public GameObject player = null;
     public GameObject followCamera = null;
     private String currentAnimation = "idle";
-    private String[] characterList = new string[] { "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
+    private String[] characterList = new string[] { "BusinessWomanPFB", "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
 
     // Start is called before the first frame update
     void Start()
