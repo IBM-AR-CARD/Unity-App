@@ -25,7 +25,8 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
 
         UnityMessageManager.Instance.SendMessageToFlutter("#started#");
 
-        changeAnimator("idle");
+        changeCharacter(TrackingScript.currentCharacter);
+        changeAnimator(TrackingScript.currentAnimation);
 
 
     }
@@ -102,6 +103,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public void changeAnimator(String animatorPath)
     {
         GameObject currentPlayer = player.gameObject.transform.GetChild(0).gameObject;
+        TrackingScript.currentAnimation = animatorPath;
         changeAnimatorWithObject(currentPlayer, animatorPath);
     }
 
@@ -115,7 +117,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         currentAnimation = animatorPath;
 
         FLookAnimator la = currentPlayer.GetComponent(typeof(FLookAnimator)) as FLookAnimator;
-        la.ObjectToFollow = animatorPath == "dancing" ? null : followCamera.transform; // if not dancing, head start following camera
+        if (la) la.ObjectToFollow = animatorPath == "dancing" ? null : followCamera.transform; // if not dancing, head start following camera
 
         Debug.Log("animator changed to " + animatorPath);
     }
@@ -135,6 +137,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
             hideObject(newChild);
         }
         Debug.Log("character changed to " + characterPath);
+        TrackingScript.currentCharacter = characterPath;
         changeAnimatorWithObject(newChild, currentAnimation);
 
     }

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
+using System;
 
 public class TrackingScript : MonoBehaviour, ITrackableEventHandler
 {
     private TrackableBehaviour mTrackableBehaviour;
     public static bool isTracked = false;
+    public static String currentCharacter = "TestMale";
+    public static String currentAnimation = "idle";
 
     void Start()
     {
