@@ -12,6 +12,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public TextMesh mytext = null;
     public GameObject player = null;
     public GameObject followCamera = null;
+    public String isARScene = null;
     private String currentAnimation = "idle";
     private String[] characterList = new string[] { "BusinessWomanPFB", "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
 
@@ -19,7 +20,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     void Start()
     {
         Debug.Log("started");
-        mytext.text = "hello world!";
+        // mytext.text = "hello world!";
 
         UnityMessageManager.Instance.SendMessageToFlutter("#started#");
 
@@ -73,7 +74,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public void changeText(String message)
     {
         Debug.Log(message);
-        mytext.text = message;
+        // mytext.text = message;
     }
 
     // This method is called from Flutter
@@ -91,10 +92,10 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         currentPlayer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         currentPlayer.transform.localPosition = Vector3.zero;
         currentAnimation = animatorPath;
-        
+
         FLookAnimator la = currentPlayer.GetComponent(typeof(FLookAnimator)) as FLookAnimator;
-        la.ObjectToFollow = animatorPath=="dancing" ? null : followCamera.transform; // if not dancing, head start following camera
-        
+        la.ObjectToFollow = animatorPath == "dancing" ? null : followCamera.transform; // if not dancing, head start following camera
+
         Debug.Log("animator changed to " + animatorPath);
     }
 
@@ -102,12 +103,13 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     {
         Transform currentPlayer = player.gameObject.transform;
         GameObject newChild = Instantiate(Resources.Load("Models/" + characterPath + "/" + characterPath)) as GameObject;
-        foreach (Transform child in currentPlayer) {
+        foreach (Transform child in currentPlayer)
+        {
             GameObject.Destroy(child.gameObject);
         }
-        
+
         newChild.transform.SetParent(player.transform, false);
-        if (!TrackingScript.isTracked)
+        if (!TrackingScript.isTracked && isARScene == "true")
         {
             hideObject(newChild);
         }
