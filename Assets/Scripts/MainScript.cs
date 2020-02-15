@@ -72,24 +72,15 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
         else if (Input.GetKeyDown("s"))
         {
-            switchSence(null);
+            switchSence(isARScene == "true" ? "CharScene" : "ARScene");
         }
     }
 
     public void switchSence(String sceneName)
     {
-        if (sceneName != null)
-        {
-            SceneManager.LoadScene(sceneName: sceneName);
-        }
-        if (isARScene == "true")
-        {
-            SceneManager.LoadScene(sceneName: "CharScene");
-        }
-        else
-        {
-            SceneManager.LoadScene(sceneName: "ARScene");
-        }
+
+        SceneManager.LoadScene(sceneName: sceneName);
+
     }
 
     // This method is called from Flutter
