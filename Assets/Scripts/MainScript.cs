@@ -71,12 +71,16 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
         else if (Input.GetKeyDown("s"))
         {
-            switchSence();
+            switchSence(null);
         }
     }
 
-    private void switchSence()
+    public void switchSence(String sceneName)
     {
+        if (sceneName != null)
+        {
+            SceneManager.LoadScene(sceneName: sceneName);
+        }
         if (isARScene == "true")
         {
             SceneManager.LoadScene(sceneName: "CharScene");
