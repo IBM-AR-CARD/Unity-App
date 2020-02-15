@@ -1,25 +1,74 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//ref http://wiki.unity3d.com/index.php?title=MouseOrbitImproved#Code_C.23
 public class PanByDrag : MonoBehaviour
 {
-    public float speed = 0.1F;
-    void Update()
-    {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            transform.Translate(-touchDeltaPosition.x * speed, -touchDeltaPosition.y * speed, 0);
-        }
+    public Transform target;
+    public float distance = 20.0f;
+    public float xSpeed = 120.0f;
+    public float ySpeed = 120.0f;
 
-        float X;
-        float Y;
-        if (Input.GetMouseButton(0))
+    public float yMinLimit = -20f;
+    public float yMaxLimit = 80f;
+
+    public float distanceMin = .5f;
+    public float distanceMax = 15f;
+
+    private Rigidbody rigidbody;
+
+    float x = 0.0f;
+    float y = 0.0f;
+
+    // Use this for initialization
+    void Start()
+    {
+        Vector3 angles = transform.eulerAngles;
+        x = angles.y;
+        y = angles.x;
+
+        rigidbody = GetComponent<Rigidbody>();
+
+        // Make the rigid body not change rotation
+        if (rigidbody != null)
         {
-            transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * speed * 10, -Input.GetAxis("Mouse X") * speed * 10, 0));
-            X = transform.rotation.eulerAngles.x;
-            Y = transform.rotation.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(X, Y, 0);
+            rigidbody.freezeRotation = true;
         }
     }
+
+    void LateUpdate()
+    {
+        if (target && Input.GetMouseButton(0))
+        {
+            x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
+            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+
+            y = ClampAngle(y, yMinLimit, yMaxLimit);
+
+            Quaternion rotation = Quaternion.Euler(y, x, 0);
+
+            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+
+            Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+            Vector3 position = rotation * negDistance + target.position;
+
+            transform.rotation = rotation;
+            transform.position = position;
+        }
+    }
+
+    public static float ClampAngle(float angle, float min, float max)
+    {
+        if (angle < -360F)
+            angle += 360F;
+        if (angle > 360F)
+            angle -= 360F;
+        return Mathf.Clamp(angle, min, max);
+    }
 }
+
+// if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+// {
+//     Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+//     transform.Translate(-touchDeltaPosition.x * speed, -touchDeltaPosition.y * speed, 0);
+// }
