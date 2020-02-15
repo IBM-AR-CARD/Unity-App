@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using FIMSpace.FLook;
+using UnityEngine.SceneManagement;
 
 public class MainScript : MonoBehaviour, IEventSystemHandler
 {
@@ -67,6 +68,22 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         else if (Input.GetKeyDown("c"))
         {
             randomModel();
+        }
+        else if (Input.GetKeyDown("s"))
+        {
+            switchSence();
+        }
+    }
+
+    private void switchSence()
+    {
+        if (isARScene == "true")
+        {
+            SceneManager.LoadScene(sceneName: "CharScene");
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName: "ARScene");
         }
     }
 
