@@ -34,25 +34,25 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     // Update is called once per frame
     void Update()
     {
-        // for (int i = 0; i < Input.touchCount; ++i)
-        // {
-        //     Debug.Log("ok");
-        //     UnityMessageManager.Instance.SendMessageToFlutter("#touched#");
+        for (int i = 0; i < Input.touchCount; ++i)
+        {
+            Debug.Log("ok");
+            // UnityMessageManager.Instance.SendMessageToFlutter("#touched#");
 
-        //     if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
-        //     {
-        //         var hit = new RaycastHit();
+            // if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
+            // {
+            //     var hit = new RaycastHit();
 
-        //         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+            //     Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
 
-        //         if (Physics.Raycast(ray, out hit))
-        //         {
-        //             Debug.Log("touched");
-        //             // This method is used to send data to Flutter
-        //             UnityMessageManager.Instance.SendMessageToFlutter("Raycast Touched");
-        //         }
-        //     }
-        // }
+            //     if (Physics.Raycast(ray, out hit))
+            //     {
+            //         Debug.Log("touched");
+            //         // This method is used to send data to Flutter
+            //         UnityMessageManager.Instance.SendMessageToFlutter("Raycast Touched");
+            //     }
+            // }
+        }
 
         if (Input.GetKeyDown("i"))
         {

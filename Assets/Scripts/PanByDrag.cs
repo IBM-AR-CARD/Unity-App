@@ -36,12 +36,14 @@ public class PanByDrag : MonoBehaviour
         }
     }
 
-    void LateUpdate()
+    void Update()
     {
+        if (Input.touchCount > 0) { Debug.Log(Input.touchCount); Debug.Log(Input.GetTouch(0).phase); }
         if (target)
         {
             float deltaX = 0;
             float deltaY = 0;
+
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
