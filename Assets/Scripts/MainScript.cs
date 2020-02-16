@@ -15,7 +15,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public GameObject followCamera = null;
     public bool isARScene;
     private String currentAnimation = "idle";
-    private String[] characterList = new string[] { "BusinessWomanPFB", "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
+    private String[] characterList = new string[] { "BusinessWomanPFB", "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "UnityChan", "SmartFemale" };
 
     // Start is called before the first frame update
     void Start()
