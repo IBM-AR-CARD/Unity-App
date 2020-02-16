@@ -38,17 +38,17 @@ public class PanByDrag : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target && Input.GetMouseButton(0))
+        if (target)
         {
-            float deltaX;
-            float deltaY;
+            float deltaX = 0;
+            float deltaY = 0;
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
                 deltaX = -touchDeltaPosition.x * 0.01f;
                 deltaY = touchDeltaPosition.y * 0.01f;
             }
-            else
+            else if (Input.GetMouseButton(0))
             {
                 deltaX = Input.GetAxis("Mouse X");
                 deltaY = Input.GetAxis("Mouse Y");

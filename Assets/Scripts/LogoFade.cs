@@ -18,7 +18,6 @@ public class LogoFade : MonoBehaviour
     // Update is called once per frame
     void startFadingLogo()
     {
-        Debug.Log(alpha);
         alpha = alpha + (decreasing ? -1 : 1);
         if (alpha <= 0)
         {
