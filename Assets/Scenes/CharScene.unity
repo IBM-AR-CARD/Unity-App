@@ -9386,6 +9386,7 @@ GameObject:
   - component: {fileID: 2125540818}
   - component: {fileID: 2125540821}
   - component: {fileID: 2125540822}
+  - component: {fileID: 2125540823}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9480,7 +9481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125540817}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11b1b3b90cc92479fa8c4f49dcb01d5f, type: 3}
   m_Name: 
@@ -9493,6 +9494,42 @@ MonoBehaviour:
   yMaxLimit: 80
   distanceMin: 2
   distanceMax: 35
+--- !u!114 &2125540823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125540817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28dc0e77eac45a34b845e50615bf9bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitTarget: {fileID: 218541334}
+  Orbiter: {fileID: 2125540820}
+  LookAtTarget: 1
+  ClampBounds: {fileID: 0}
+  MinimumDistance: 1.8
+  MaximumDistance: 3.3
+  ZoomSpeed: 2
+  ZoomLookAtSpeed: 1
+  ZoomThresholdUnits: 0.15
+  OrbitXSpeed: 5
+  OrbitXMaxDegrees: 20
+  XAxisMovementType: 0
+  OrbitXPanSpeed: 0
+  OrbitXPanLimit: 0
+  OrbitYSpeed: -10
+  OrbitYMaxDegrees: 0
+  YAxisMovementType: 0
+  OrbitYPanSpeed: 0
+  OrbitYPanLimit: 0
+  AllowOrbitWhileZooming: 0
+  AllowMovementOnBothAxisSimultaneously: 1
+  OrbitInertia: 0.925
+  OrbitMaximumSize: {x: 0, y: 0, z: 0}
+  RequireOrbitGesturesToStartOnTarget: 0
 --- !u!1001 &2132867544
 PrefabInstance:
   m_ObjectHideFlags: 0
