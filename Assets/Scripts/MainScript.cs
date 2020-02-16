@@ -13,7 +13,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
     public TextMesh mytext = null;
     public GameObject player = null;
     public GameObject followCamera = null;
-    public String isARScene = null;
+    public bool isARScene;
     private String currentAnimation = "idle";
     private String[] characterList = new string[] { "BusinessWomanPFB", "TestMale", "Luffy", "FitFemale", "Jiraiya", "YodaRigged", "BusinessMale", "BusinessFemale", "SmartMale", "SmartFemale" };
 
@@ -72,7 +72,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
         else if (Input.GetKeyDown("s"))
         {
-            switchSence(isARScene == "true" ? "CharScene" : "ARScene");
+            switchSence(isARScene ? "CharScene" : "ARScene");
         }
     }
 
@@ -107,8 +107,11 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         currentPlayer.transform.localPosition = Vector3.zero;
         currentAnimation = animatorPath;
 
-        FLookAnimator la = currentPlayer.GetComponent(typeof(FLookAnimator)) as FLookAnimator;
-        if (la) la.ObjectToFollow = animatorPath == "dancing" ? null : followCamera.transform; // if not dancing, head start following camera
+        if (isARScene)
+        {
+            FLookAnimator la = currentPlayer.GetComponent(typeof(FLookAnimator)) as FLookAnimator;
+            if (la) la.ObjectToFollow = animatorPath == "dancing" ? null : followCamera.transform; // if not dancing, head start following camera
+        }
 
         Debug.Log("animator changed to " + animatorPath);
     }
@@ -123,7 +126,7 @@ public class MainScript : MonoBehaviour, IEventSystemHandler
         }
 
         newChild.transform.SetParent(player.transform, false);
-        if (!TrackingScript.isTracked && isARScene == "true")
+        if (!TrackingScript.isTracked && isARScene)
         {
             hideObject(newChild);
         }

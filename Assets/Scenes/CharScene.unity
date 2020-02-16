@@ -9472,7 +9472,7 @@ MonoBehaviour:
   mytext: {fileID: 0}
   player: {fileID: 945533170}
   followCamera: {fileID: 2125540817}
-  isARScene: false
+  isARScene: 0
 --- !u!114 &2125540822
 MonoBehaviour:
   m_ObjectHideFlags: 0

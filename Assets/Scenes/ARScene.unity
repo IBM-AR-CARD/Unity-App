@@ -606,7 +606,7 @@ MonoBehaviour:
   mytext: {fileID: 1778343149}
   player: {fileID: 1604809147}
   followCamera: {fileID: 1633677017}
-  isARScene: true
+  isARScene: 1
 --- !u!1 &890352527
 GameObject:
   m_ObjectHideFlags: 0
