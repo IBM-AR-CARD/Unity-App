@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//ref http://wiki.unity3d.com/index.php?title=MouseOrbitImproved#Code_C.23
+//modified based on ref http://wiki.unity3d.com/index.php?title=MouseOrbitImproved#Code_C.23
 public class PanByDrag : MonoBehaviour
 {
     public Transform target;
@@ -40,8 +40,21 @@ public class PanByDrag : MonoBehaviour
     {
         if (target && Input.GetMouseButton(0))
         {
-            x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
-            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+            float deltaX;
+            float deltaY;
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+                deltaX = -touchDeltaPosition.x * 0.01f;
+                deltaY = touchDeltaPosition.y * 0.01f;
+            }
+            else
+            {
+                deltaX = Input.GetAxis("Mouse X");
+                deltaY = Input.GetAxis("Mouse Y");
+            }
+            x += deltaX * xSpeed * distance * 0.02f;
+            y -= deltaY * ySpeed * 0.02f;
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
