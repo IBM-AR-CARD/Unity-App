@@ -5680,6 +5680,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1244808899769821314, guid: 4f14ca30d79c4461398e4bb8f7aa4475,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1244808899774092866, guid: 4f14ca30d79c4461398e4bb8f7aa4475,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
@@ -9208,7 +9213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103930113}
   m_LocalRotation: {x: 0, y: -0.1564345, z: 0, w: 0.98768836}
-  m_LocalPosition: {x: 0.7, y: 0.013, z: 6.504}
+  m_LocalPosition: {x: 0.7, y: 0.031, z: 6.504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 945533171}
@@ -9514,7 +9519,7 @@ MonoBehaviour:
   MaximumDistance: 3.3
   ZoomSpeed: 2
   ZoomLookAtSpeed: 1
-  ZoomThresholdUnits: 0.15
+  ZoomThresholdUnits: 0.052
   OrbitXSpeed: 5
   OrbitXMaxDegrees: 20
   XAxisMovementType: 0
@@ -9525,9 +9530,9 @@ MonoBehaviour:
   YAxisMovementType: 0
   OrbitYPanSpeed: 0
   OrbitYPanLimit: 0
-  AllowOrbitWhileZooming: 0
+  AllowOrbitWhileZooming: 1
   AllowMovementOnBothAxisSimultaneously: 1
-  OrbitInertia: 0.925
+  OrbitInertia: 0.5
   OrbitMaximumSize: {x: 0, y: 0, z: 0}
   RequireOrbitGesturesToStartOnTarget: 0
 --- !u!1001 &2132867544
